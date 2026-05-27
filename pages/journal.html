@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Journal — Pupproper</title>
+  <meta name="description" content="Notes from the studio. Letters on the ritual, the formulation, the founder's POV, and the slow build of a dog apothecary." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <style>
+    /* Journal-specific layout */
+    .journal-hero { padding: 96px 0 48px; background: var(--cream); }
+    .journal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    @media (max-width: 1024px) { .journal-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+    @media (max-width: 640px) { .journal-grid { grid-template-columns: 1fr; gap: 20px; } }
+    .post-card {
+      background: var(--white);
+      border: 1px solid rgba(26,26,26,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .post-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(26,26,26,0.08); }
+    .post-card__image { aspect-ratio: 4 / 3; overflow: hidden; }
+    .post-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .post-card:hover .post-card__image img { transform: scale(1.03); }
+    .post-card__body { padding: 22px 24px 28px; display: flex; flex-direction: column; gap: 10px; }
+    .post-card__meta { font-family: 'Söhne Mono','JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.55; }
+    .post-card__title { font-family: 'Söhne Breit','Inter',sans-serif; font-weight: 800; font-size: 22px; line-height: 1.2; letter-spacing: -0.005em; }
+    .post-card__excerpt { font-size: 14px; line-height: 1.55; opacity: 0.78; margin-top: 4px; }
+    .post-card__cta { margin-top: auto; padding-top: 14px; font-family: 'Söhne Mono','JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--coral); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="site-header__logo">PUPPROPER</a>
+      <nav class="site-nav">
+        <a href="resurrection.html">Resurrection</a>
+        <a href="confession.html">Confession</a>
+        <a href="the-confessional.html">The Bundle</a>
+        <a href="comparison.html">Compare</a>
+        <a href="journal.html">Journal</a>
+        <a href="about.html">About</a>
+        <a href="#" class="site-nav__cart">Cart · 0</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="journal-hero">
+    <div class="container">
+      <div class="container-sm">
+        <p class="mono mb-sm">The Journal</p>
+        <h1 class="wordmark" style="font-size: clamp(44px, 6vw, 80px); margin-bottom: 18px;">Notes from the studio.</h1>
+        <p class="body-lg" style="max-width: 640px; opacity: 0.85;">A small set of letters on the ritual, the formulation, the founder's POV, and the slow build of a dog apothecary. We write here when there's something worth reading.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="journal-grid">
+
+      <article class="post-card">
+        <div class="post-card__image">
+          <img src="../../images/creative/creative-v4-ingredient-flatlay.png" alt="Ingredient flatlay" loading="lazy" />
+        </div>
+        <div class="post-card__body">
+          <p class="post-card__meta">Issue 01 · Ingredients</p>
+          <h2 class="post-card__title">Fourteen ingredients. Each one named.</h2>
+          <p class="post-card__excerpt">Why every line of the Resurrection ingredient list appears on the back of the bottle in standard nomenclature — and why most pet products bury synthetics behind a single "fragrance" line.</p>
+          <span class="post-card__cta">Read the note →</span>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card__image">
+          <img src="../../images/creative/creative-v4-ritual-application.png" alt="Ritual application" loading="lazy" />
+        </div>
+        <div class="post-card__body">
+          <p class="post-card__meta">Issue 02 · The Ritual</p>
+          <h2 class="post-card__title">A thirty-second ritual for the space between baths.</h2>
+          <p class="post-card__excerpt">The three-step application protocol we wrote into the carton — and what each step is actually doing to the coat at the molecular level.</p>
+          <span class="post-card__cta">Read the note →</span>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card__image">
+          <img src="../../images/creative/creative-v4-shelf-with-aesop.png" alt="The shelf test" loading="lazy" />
+        </div>
+        <div class="post-card__body">
+          <p class="post-card__meta">Issue 03 · Brand World</p>
+          <h2 class="post-card__title">The shelf test.</h2>
+          <p class="post-card__excerpt">The single brand test we apply to every Pupproper decision. If the bottle can't sit comfortably between an Aesop and a Le Labo, we go back to the perfumer.</p>
+          <span class="post-card__cta">Read the note →</span>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card__image">
+          <img src="../../images/creative/creative-v4-founder-pov.png" alt="Founder POV" loading="lazy" />
+        </div>
+        <div class="post-card__body">
+          <p class="post-card__meta">Issue 04 · Founder POV</p>
+          <h2 class="post-card__title">It began on a bathroom shelf.</h2>
+          <p class="post-card__excerpt">The unopened Aesop bottle, the half-empty dog shampoo, the cognitive dissonance that became a brand. A note from Spencer.</p>
+          <span class="post-card__cta">Read the note →</span>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card__image">
+          <img src="../../images/product/product-v4-modern-coral-bottle.png" alt="On the bottle" loading="lazy" style="object-fit: contain; background: var(--coral);" />
+        </div>
+        <div class="post-card__body">
+          <p class="post-card__meta">Issue 05 · Packaging</p>
+          <h2 class="post-card__title">On the bottle.</h2>
+          <p class="post-card__excerpt">Three reasons the bottle is amber glass, the cap is matte aluminum, and the label is wrapped in soft-touch paper screen-printed in ink black. Six months in development.</p>
+          <span class="post-card__cta">Read the note →</span>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card__image">
+          <img src="../../images/creative/creative-v3-lifestyle-bathroom.png" alt="On scent" loading="lazy" />
+        </div>
+        <div class="post-card__body">
+          <p class="post-card__meta">Issue 06 · Scent</p>
+          <h2 class="post-card__title">Notes from the perfumer's brief.</h2>
+          <p class="post-card__excerpt">Sandalwood. Neroli. Vetiver. Why those three notes, and why the sixteen-item pet-toxin exclusion list shaped every decision the perfumer made.</p>
+          <span class="post-card__cta">Read the note →</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BUNDLE CTA -->
+  <section class="section bg-coral">
+    <div class="container text-center">
+      <p class="mono section__eyebrow">A pairing</p>
+      <h2 class="display section__title">Start the ritual.</h2>
+      <p class="section__lede mt-md" style="margin-left: auto; margin-right: auto;">Resurrection handles the space between baths. Confession handles the rug after the accident. Together, the full ritual — for $6 less than separately.</p>
+      <a href="the-confessional.html" class="btn btn--lg mt-md" style="background: var(--ink); color: var(--cream);">The Confessional — $58</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <div class="site-footer__logo">PUPPROPER</div>
+          <p class="site-footer__lede">A dog apothecary for the household that takes its rituals seriously. Made in Brooklyn, slowly.</p>
+        </div>
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Shop</p>
+          <ul>
+            <li><a href="resurrection.html">Resurrection Dry Wash</a></li>
+            <li><a href="confession.html">Confession Stain Remedy</a></li>
+            <li><a href="the-confessional.html">The Confessional Bundle</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Brand</p>
+          <ul>
+            <li><a href="about.html">Our story</a></li>
+            <li><a href="comparison.html">Why Pupproper</a></li>
+            <li><a href="journal.html">The Journal</a></li>
+            <li><a href="../index.html">Home</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Care</p>
+          <ul>
+            <li><a href="mailto:hello@pupproper.com">hello@pupproper.com</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <div>&copy; 2026 Pupproper, Inc. · Brooklyn, NY</div>
+        <div>Hand-bottled. Cruelty-free. Vegan. Made in the USA.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Pupproper site config + checkout shim + Meta Pixel -->
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/checkout.js"></script>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+  if(window.PUPPROPER_CONFIG&&window.PUPPROPER_CONFIG.META_PIXEL_ID&&window.PUPPROPER_CONFIG.META_PIXEL_ID.indexOf("REPLACE_ME")!==0){fbq("init",window.PUPPROPER_CONFIG.META_PIXEL_ID);fbq("track","PageView");}
+  </script>
+
+</body>
+</html>

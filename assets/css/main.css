@@ -463,3 +463,121 @@ ul, ol { list-style: none; }
   max-width: 720px;
 }
 
+
+/* ============================================================
+   MOBILE OPTIMIZATION — refinement passes
+   ============================================================ */
+
+/* Tighter hero on small screens */
+@media (max-width: 640px) {
+  .hero { padding: 56px 0 48px; }
+  .hero__title { font-size: clamp(36px, 10vw, 56px); }
+  .hero__lede { font-size: 16px; }
+  .hero__cta-row .btn { width: 100%; justify-content: center; }
+  .hero__bottle img { max-height: 380px; }
+  .hero__eyebrow { font-size: 10px; }
+}
+
+/* Section spacing tightens on mobile */
+@media (max-width: 640px) {
+  .section { padding: 48px 0; }
+  .section__title { font-size: clamp(28px, 7vw, 40px); }
+  .section__lede { font-size: 15px; line-height: 1.55; }
+  .editorial-block__copy h2 { font-size: clamp(26px, 6.5vw, 36px); }
+}
+
+/* Mobile nav — hide secondary links but keep cart */
+@media (max-width: 768px) {
+  .site-header__inner { height: 60px; }
+  .site-header__logo { font-size: 18px; }
+  .site-nav { gap: 12px; }
+  .site-nav__cart { padding: 8px 14px; font-size: 12px; }
+}
+
+/* Comparison table — make it horizontally scrollable on tiny screens */
+@media (max-width: 640px) {
+  .compare {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+  .compare thead, .compare tbody, .compare tr { display: table; width: 100%; }
+  .compare th, .compare td { padding: 14px 12px; font-size: 12px; white-space: normal; }
+}
+
+/* SKU cards stack cleanly */
+@media (max-width: 640px) {
+  .sku-card { padding: 28px 22px 22px; border-radius: 18px; }
+  .sku-card__image { max-height: 260px; }
+  .sku-card__name { font-size: 24px; }
+  .sku-card__price { font-size: 20px; }
+}
+
+/* PDP gallery scales down */
+@media (max-width: 640px) {
+  .pdp { gap: 32px; padding: 24px 0 48px; }
+  .pdp__gallery { gap: 12px; }
+  .pdp__name { font-size: clamp(28px, 7vw, 40px); }
+  .pdp__price { font-size: 26px; }
+  .pdp__sub { font-size: 16px; }
+  .pdp__detail { padding-top: 28px; margin-top: 28px; }
+  .pdp__detail-title { font-size: 12px; }
+}
+
+/* Footer mobile spacing */
+@media (max-width: 640px) {
+  .site-footer { padding: 56px 0 24px; }
+  .site-footer__grid { gap: 28px; margin-bottom: 32px; }
+  .site-footer__bottom { flex-direction: column; gap: 8px; font-size: 11px; }
+}
+
+/* FAQ touch targets — bigger tap area on mobile */
+@media (max-width: 640px) {
+  .faq-item { padding: 18px 4px; }
+  .faq-item summary { font-size: 17px; padding-right: 36px; }
+  .faq-item p { font-size: 15px; }
+}
+
+/* Pain points stack with breathing room */
+@media (max-width: 640px) {
+  .pain-points { margin-top: 32px; gap: 16px; }
+  .pain-card { padding: 24px 22px; border-radius: 12px; }
+  .pain-card__quote { font-size: 16px; }
+  .pain-card__answer { font-size: 13px; }
+}
+
+/* Hero variant — about page cream hero */
+@media (max-width: 640px) {
+  .hero--cream .hero__title { font-size: clamp(34px, 9vw, 56px) !important; }
+}
+
+/* Container padding tighter on mobile */
+@media (max-width: 480px) {
+  .container, .container-sm { padding: 0 16px; }
+}
+
+/* Bundle floating cross-sell card */
+.bundle-promo {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  background: linear-gradient(135deg, var(--coral) 0%, var(--sage) 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 32px 0;
+}
+.bundle-promo__image { background: var(--cream-2, var(--cream)); position: relative; }
+.bundle-promo__image img { width: 100%; height: 100%; object-fit: cover; }
+.bundle-promo__copy { padding: 36px 36px 32px; color: var(--ink); }
+.bundle-promo__eyebrow { font-family: 'Söhne Mono','JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7; margin-bottom: 10px; }
+.bundle-promo__title { font-family: 'Söhne Breit','Inter',sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 32px); line-height: 1.15; margin-bottom: 12px; }
+.bundle-promo__copy p { font-size: 15px; line-height: 1.55; opacity: 0.85; margin-bottom: 18px; }
+.bundle-promo__price { display: inline-flex; align-items: baseline; gap: 8px; margin-bottom: 18px; }
+.bundle-promo__price .save { font-size: 14px; opacity: 0.7; text-decoration: line-through; }
+.bundle-promo__price .now { font-size: 22px; font-weight: 700; }
+@media (max-width: 768px) {
+  .bundle-promo { grid-template-columns: 1fr; }
+  .bundle-promo__image { aspect-ratio: 5 / 3; }
+  .bundle-promo__copy { padding: 28px 24px 26px; }
+}
