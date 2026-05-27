@@ -18,7 +18,8 @@ window.PUPPROPER_CONFIG = {
   META_PIXEL_ID: "REPLACE_ME_PIXEL_ID",
 
   // ─── GA4 ───
-  GA4_MEASUREMENT_ID: "REPLACE_ME_GA4_ID",   // format: G-XXXXXXXXXX
+  // LIVE — provisioned 2026-05-27 via Pupproper GA4 property (Stream ID 14956137001)
+  GA4_MEASUREMENT_ID: "G-P0690GBYCN",
 
   // ─── Plausible Analytics (privacy-first, optional) ───
   PLAUSIBLE_DOMAIN: "pupproper.com",
