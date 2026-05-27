@@ -295,3 +295,36 @@ body.nav-open { overflow: hidden; }
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+
+/* ════════════════════ VIDEO LOOPS (v4 motion pass) ════════════════════ */
+
+.bleed-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.bleed-video--wide { aspect-ratio: 21 / 9; }
+
+.pdp__video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 12px;
+  background: rgba(26, 26, 26, 0.04);
+}
+
+/* Reduced motion: pause autoplay videos */
+@media (prefers-reduced-motion: reduce) {
+  .bleed-video, .pdp__video {
+    animation-play-state: paused;
+  }
+  /* Hide the video element entirely and let the poster show */
+  .bleed-video[autoplay], .pdp__video[autoplay] {
+    /* keep the poster visible by NOT setting display:none, but pause via JS */
+  }
+}

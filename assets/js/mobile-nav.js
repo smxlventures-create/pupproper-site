@@ -40,3 +40,15 @@
     mql.addEventListener ? mql.addEventListener('change', onChange) : mql.addListener(onChange);
   });
 })();
+
+
+/* Pause autoplay videos if user prefers reduced motion */
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('video[autoplay]').forEach(function (v) {
+        try { v.pause(); v.removeAttribute('autoplay'); } catch (e) {}
+      });
+    });
+  }
+})();

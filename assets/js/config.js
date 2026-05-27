@@ -15,7 +15,8 @@ window.PUPPROPER_CONFIG = {
   STRIPE_PUBLISHABLE_KEY: "REPLACE_ME_STRIPE_PK_LIVE",
 
   // ─── Meta Pixel ───
-  META_PIXEL_ID: "REPLACE_ME_PIXEL_ID",
+  // LIVE — Spencer's Meta Business Manager Pixel (provisioned 2026-05-27)
+  META_PIXEL_ID: "1314397047344872",
 
   // ─── GA4 ───
   // LIVE — provisioned 2026-05-27 via Pupproper GA4 property (Stream ID 14956137001)
