@@ -7,7 +7,14 @@
   <meta name="description" content="Notes from the studio. Letters on the ritual, the formulation, the founder's POV, and the slow build of a dog apothecary." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="canonical" href="https://pupproper.com/pages/journal" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pupproper.com/pages/journal" />
+  <meta property="og:title" content="The Journal — Pupproper" />
+  <meta property="og:description" content="Notes from the studio. Letters on the ritual, the formulation, the founder's POV." />
+  <meta property="og:image" content="https://pupproper.com/images/creative/creative-v4-ingredient-flatlay.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/main.css" />
   <style>
     /* Journal-specific layout */
@@ -191,13 +198,15 @@
     </div>
   </footer>
 
-  <!-- Pupproper site config + checkout shim + Meta Pixel -->
   <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/tracking.js"></script>
   <script src="/assets/js/checkout.js"></script>
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
   if(window.PUPPROPER_CONFIG&&window.PUPPROPER_CONFIG.META_PIXEL_ID&&window.PUPPROPER_CONFIG.META_PIXEL_ID.indexOf("REPLACE_ME")!==0){fbq("init",window.PUPPROPER_CONFIG.META_PIXEL_ID);fbq("track","PageView");}
   </script>
+  <script>(function(){var cfg=window.PUPPROPER_CONFIG||{};if(cfg.GA4_MEASUREMENT_ID&&cfg.GA4_MEASUREMENT_ID.indexOf("REPLACE_ME")!==0){var s=document.createElement('script');s.async=!0;s.src='https://www.googletagmanager.com/gtag/js?id='+cfg.GA4_MEASUREMENT_ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',cfg.GA4_MEASUREMENT_ID,{send_page_view:!0});}})();</script>
+  <script>(function(){var cfg=window.PUPPROPER_CONFIG||{};if(cfg.PLAUSIBLE_DOMAIN&&cfg.PLAUSIBLE_DOMAIN.indexOf("REPLACE_ME")!==0){var s=document.createElement('script');s.defer=!0;s.setAttribute('data-domain',cfg.PLAUSIBLE_DOMAIN);s.src='https://plausible.io/js/script.js';document.head.appendChild(s);}})();</script>
 
 </body>
 </html>
