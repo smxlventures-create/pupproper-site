@@ -1,19 +1,27 @@
 /* PUPPROPER — site config
- * Stripe Payment Link URLs + Meta Pixel ID + analytics keys live here.
- * Replace the REPLACE_ME values when ready, then redeploy.
+ * All keys + URLs live here so swapping them never requires a code change.
+ * Public keys only. NEVER put sk_live_ secret keys here.
  */
 window.PUPPROPER_CONFIG = {
-  // Stripe Payment Links — replace after creating in Stripe dashboard
+  // ─── Stripe Payment Links (PUBLIC — safe to expose) ───
+  // Create in Stripe Dashboard → Payment Links → New, then paste the URLs here.
   STRIPE_RESURRECTION: "REPLACE_ME_STRIPE_RESURRECTION_URL",
-  STRIPE_CONFESSION: "REPLACE_ME_STRIPE_CONFESSION_URL",
-  STRIPE_BUNDLE: "REPLACE_ME_STRIPE_BUNDLE_URL",
+  STRIPE_CONFESSION:   "REPLACE_ME_STRIPE_CONFESSION_URL",
+  STRIPE_BUNDLE:       "REPLACE_ME_STRIPE_BUNDLE_URL",
 
-  // Meta Pixel — replace with your pixel ID once Meta Ad Account is set up
+  // Stripe Publishable Key (PUBLIC — safe to expose). Used ONLY if you add Stripe.js Embedded Checkout later.
+  // For Payment Links above, this isn't required.
+  STRIPE_PUBLISHABLE_KEY: "REPLACE_ME_STRIPE_PK_LIVE",
+
+  // ─── Meta Pixel ───
   META_PIXEL_ID: "REPLACE_ME_PIXEL_ID",
 
-  // Klaviyo / email — fill once Workspace + Klaviyo are wired
-  KLAVIYO_PUBLIC_KEY: "REPLACE_ME_KLAVIYO_KEY",
+  // ─── GA4 ───
+  GA4_MEASUREMENT_ID: "REPLACE_ME_GA4_ID",   // format: G-XXXXXXXXXX
 
-  // Plausible Analytics domain (set once Plausible is enabled)
-  PLAUSIBLE_DOMAIN: "pupproper.com"
+  // ─── Plausible Analytics (privacy-first, optional) ───
+  PLAUSIBLE_DOMAIN: "pupproper.com",
+
+  // ─── Klaviyo (email capture, optional) ───
+  KLAVIYO_PUBLIC_KEY: "REPLACE_ME_KLAVIYO_KEY"
 };

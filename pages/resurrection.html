@@ -3,14 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resurrection Dry Wash — Pupproper</title>
-  <meta name="description" content="A waterless coat refresher developed with a perfumer and a board-certified veterinary dermatologist. Sandalwood, neroli, vetiver. Six ounces, amber glass, fine mist." />
+  <title>Resurrection Dry Wash — Pupproper | Premium Waterless Dog Shampoo</title>
+  <meta name="description" content="A waterless coat refresher developed with a perfumer and a board-certified veterinary dermatologist. Sandalwood, neroli, vetiver. 6 fl oz amber glass. 14 ingredients, each named. $36." />
+  <meta name="keywords" content="dry shampoo for dogs, waterless dog shampoo, premium dog grooming, IFRA pet-safe, sandalwood dog spray, between baths spray, Pupproper, vegan dog wash" />
+  <link rel="canonical" href="https://pupproper.com/pages/resurrection" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="product" />
+  <meta property="og:url" content="https://pupproper.com/pages/resurrection" />
+  <meta property="og:title" content="Resurrection Dry Wash — Pupproper" />
+  <meta property="og:description" content="A waterless coat refresher developed with a perfumer and a board-certified veterinary dermatologist. 6 fl oz amber glass. $36." />
+  <meta property="og:image" content="https://pupproper.com/images/product/product-v4-modern-coral-bottle.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:site_name" content="Pupproper" />
+  <meta property="product:price:amount" content="36.00" />
+  <meta property="product:price:currency" content="USD" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Resurrection Dry Wash — Pupproper" />
+  <meta name="twitter:description" content="For the space between baths. Sandalwood, neroli, vetiver. Six ounces, amber glass." />
+  <meta name="twitter:image" content="https://pupproper.com/images/product/product-v4-modern-coral-bottle.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/main.css" />
+
+  <!-- JSON-LD: Product schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Resurrection Dry Wash",
+    "image": [
+      "https://pupproper.com/images/product/product-v4-modern-coral-bottle.png",
+      "https://pupproper.com/images/product/product-v5-resurrection-in-hand-mist.png",
+      "https://pupproper.com/images/product/product-v6-resurrection-back-label.png"
+    ],
+    "description": "A waterless coat refresher developed with a perfumer and a board-certified veterinary dermatologist. Rice starch, colloidal oatmeal, kaolin clay, plus a bespoke sandalwood–neroli–vetiver fragrance. 14 ingredients, each named on the bottle. 6 fl oz amber glass.",
+    "sku": "PP-RES-001",
+    "mpn": "PP-RES-001",
+    "brand": { "@type": "Brand", "name": "Pupproper" },
+    "category": "Pet Grooming > Dog Shampoo > Dry Shampoo",
+    "audience": { "@type": "PeopleAudience", "audienceType": "Dog owners" },
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Volume", "value": "6 fl oz / 177 mL" },
+      { "@type": "PropertyValue", "name": "Form", "value": "Waterless mist spray" },
+      { "@type": "PropertyValue", "name": "Fragrance", "value": "Sandalwood, neroli, vetiver" },
+      { "@type": "PropertyValue", "name": "Pet-safe", "value": "IFRA Category 5A compliant" }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "url": "https://pupproper.com/pages/resurrection",
+      "priceCurrency": "USD",
+      "price": "36.00",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": { "@type": "Organization", "name": "Pupproper, Inc." }
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Pupproper", "item": "https://pupproper.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Resurrection Dry Wash", "item": "https://pupproper.com/pages/resurrection" }
+    ]
+  }
+  </script>
 </head>
-<body>
+<body data-pdp="resurrection">
 
   <header class="site-header">
     <div class="container site-header__inner">
@@ -367,13 +435,25 @@
     </div>
   </footer>
 
-  <!-- Pupproper site config + checkout shim -->
+  <!-- Pupproper site config + tracking + checkout -->
   <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/tracking.js"></script>
   <script src="/assets/js/checkout.js"></script>
-  <!-- Meta Pixel — replace REPLACE_ME_PIXEL_ID in /assets/js/config.js -->
+
+  <!-- Meta Pixel -->
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
   if(window.PUPPROPER_CONFIG&&window.PUPPROPER_CONFIG.META_PIXEL_ID&&window.PUPPROPER_CONFIG.META_PIXEL_ID.indexOf("REPLACE_ME")!==0){fbq("init",window.PUPPROPER_CONFIG.META_PIXEL_ID);fbq("track","PageView");}
+  </script>
+
+  <!-- GA4 -->
+  <script>
+  (function(){var cfg=window.PUPPROPER_CONFIG||{};if(cfg.GA4_MEASUREMENT_ID&&cfg.GA4_MEASUREMENT_ID.indexOf("REPLACE_ME")!==0){var s=document.createElement('script');s.async=!0;s.src='https://www.googletagmanager.com/gtag/js?id='+cfg.GA4_MEASUREMENT_ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',cfg.GA4_MEASUREMENT_ID,{send_page_view:!0});}})();
+  </script>
+
+  <!-- Plausible -->
+  <script>
+  (function(){var cfg=window.PUPPROPER_CONFIG||{};if(cfg.PLAUSIBLE_DOMAIN&&cfg.PLAUSIBLE_DOMAIN.indexOf("REPLACE_ME")!==0){var s=document.createElement('script');s.defer=!0;s.setAttribute('data-domain',cfg.PLAUSIBLE_DOMAIN);s.src='https://plausible.io/js/script.js';document.head.appendChild(s);}})();
   </script>
 </body>
 </html>

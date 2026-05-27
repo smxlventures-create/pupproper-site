@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Thank you — Pupproper</title>
+  <meta name="description" content="Your order has been received. Hand-bottled in Brooklyn." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="/" class="site-header__logo">PUPPROPER</a>
+      <nav class="site-nav">
+        <a href="/pages/resurrection.html">Resurrection</a>
+        <a href="/pages/confession.html">Confession</a>
+        <a href="/pages/the-confessional.html">The Bundle</a>
+        <a href="/pages/journal.html">Journal</a>
+        <a href="/pages/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero hero--cream">
+    <div class="container">
+      <div class="container-sm text-center">
+        <p class="mono hero__eyebrow">Order received</p>
+        <h1 class="wordmark hero__title" style="font-size: clamp(48px, 6vw, 84px);">Thank you.</h1>
+        <p class="body-lg mt-md" style="max-width: 580px; margin-left: auto; margin-right: auto;">
+          We've received your order. A confirmation has been sent to your email. Hand-bottled in Brooklyn, shipped in a cream FSC paperboard mailer. You'll have it within five to seven business days.
+        </p>
+        <p class="mono mt-lg" style="opacity: 0.55;">— The Pupproper studio</p>
+        <a href="/" class="btn btn--outline mt-md">Back to Pupproper</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__bottom" style="border-top: none;">
+        <div>&copy; 2026 Pupproper, Inc. · Brooklyn, NY</div>
+        <div>Hand-bottled. Cruelty-free. Vegan. Made in the USA.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tracking — Purchase event fires from tracking.js based on URL params (?sku=X&value=Y&session_id=Z) -->
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/tracking.js"></script>
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+  if(window.PUPPROPER_CONFIG&&window.PUPPROPER_CONFIG.META_PIXEL_ID&&window.PUPPROPER_CONFIG.META_PIXEL_ID.indexOf("REPLACE_ME")!==0){fbq("init",window.PUPPROPER_CONFIG.META_PIXEL_ID);fbq("track","PageView");}
+  </script>
+</body>
+</html>

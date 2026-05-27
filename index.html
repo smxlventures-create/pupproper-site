@@ -3,12 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pupproper — A Dog Apothecary</title>
-  <meta name="description" content="A dog apothecary for the household that takes its rituals seriously. Hero SKU: Resurrection Dry Wash — waterless coat refresher developed with a perfumer and a board-certified veterinary dermatologist." />
+  <title>Pupproper — A Dog Apothecary | Premium Dry Shampoo + Stain Remedy</title>
+  <meta name="description" content="A dog apothecary for the household that takes its rituals seriously. Resurrection Dry Wash + Confession Stain Remedy — developed with a perfumer and a board-certified veterinary dermatologist. Hand-bottled in Brooklyn." />
+  <meta name="keywords" content="dog dry shampoo, premium pet grooming, dog stain remover, enzymatic pet cleaner, waterless dog wash, pet apothecary, IFRA pet-safe, vegan dog grooming" />
+  <link rel="canonical" href="https://pupproper.com/" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pupproper.com/" />
+  <meta property="og:title" content="Pupproper — A Dog Apothecary" />
+  <meta property="og:description" content="A dog apothecary for the household that takes its rituals seriously. Developed with a perfumer and a board-certified veterinary dermatologist. Hand-bottled in Brooklyn." />
+  <meta property="og:image" content="https://pupproper.com/images/product/product-v4-modern-coral-bottle.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:site_name" content="Pupproper" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pupproper — A Dog Apothecary" />
+  <meta name="twitter:description" content="A dog apothecary for the household that takes its rituals seriously. Hand-bottled in Brooklyn." />
+  <meta name="twitter:image" content="https://pupproper.com/images/product/product-v4-modern-coral-bottle.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- JSON-LD: Organization + Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pupproper",
+    "legalName": "Pupproper, Inc.",
+    "url": "https://pupproper.com",
+    "logo": "https://pupproper.com/images/logo/logo-15-modern-coral-labradoodle.png",
+    "email": "hello@pupproper.com",
+    "foundingDate": "2026",
+    "founder": { "@type": "Person", "name": "Spencer Lampkin" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Brooklyn", "addressRegion": "NY", "addressCountry": "US" },
+    "description": "A dog apothecary for the household that takes its rituals seriously. Developed with a perfumer and a board-certified veterinary dermatologist.",
+    "sameAs": []
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://pupproper.com",
+    "name": "Pupproper",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://pupproper.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -109,7 +162,7 @@
     <!-- BUNDLE PROMO CARD -->
     <div class="bundle-promo mt-lg">
       <div class="bundle-promo__image">
-        <img src="../images/product/product-v4-bundle-confessional.png" alt="The Confessional bundle — Resurrection + Confession" />
+        <img src="../images/product/product-v7-bundle-confessional.png" alt="The Confessional bundle — Resurrection + Confession" />
       </div>
       <div class="bundle-promo__copy">
         <p class="bundle-promo__eyebrow">The Pairing</p>
@@ -315,13 +368,44 @@
     </div>
   </footer>
 
-  <!-- Pupproper site config + checkout shim -->
+  <!-- Pupproper site config + checkout + tracking -->
   <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/tracking.js"></script>
   <script src="/assets/js/checkout.js"></script>
-  <!-- Meta Pixel — replace REPLACE_ME_PIXEL_ID in /assets/js/config.js -->
+
+  <!-- Meta Pixel — auto-inits PageView if pixel ID configured in config.js -->
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
   if(window.PUPPROPER_CONFIG&&window.PUPPROPER_CONFIG.META_PIXEL_ID&&window.PUPPROPER_CONFIG.META_PIXEL_ID.indexOf("REPLACE_ME")!==0){fbq("init",window.PUPPROPER_CONFIG.META_PIXEL_ID);fbq("track","PageView");}
+  </script>
+
+  <!-- GA4 — auto-inits if GA4 measurement ID configured -->
+  <script>
+  (function(){
+    var cfg = window.PUPPROPER_CONFIG || {};
+    if (cfg.GA4_MEASUREMENT_ID && cfg.GA4_MEASUREMENT_ID.indexOf("REPLACE_ME") !== 0) {
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + cfg.GA4_MEASUREMENT_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', cfg.GA4_MEASUREMENT_ID, { send_page_view: true });
+    }
+  })();
+  </script>
+
+  <!-- Plausible (privacy-first analytics) — auto-inits if PLAUSIBLE_DOMAIN configured -->
+  <script>
+  (function(){
+    var cfg = window.PUPPROPER_CONFIG || {};
+    if (cfg.PLAUSIBLE_DOMAIN && cfg.PLAUSIBLE_DOMAIN.indexOf("REPLACE_ME") !== 0) {
+      var s = document.createElement('script'); s.defer = true;
+      s.setAttribute('data-domain', cfg.PLAUSIBLE_DOMAIN);
+      s.src = 'https://plausible.io/js/script.js';
+      document.head.appendChild(s);
+    }
+  })();
   </script>
 </body>
 </html>
