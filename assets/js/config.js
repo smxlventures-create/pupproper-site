@@ -4,10 +4,11 @@
  */
 window.PUPPROPER_CONFIG = {
   // ─── Stripe Payment Links (PUBLIC — safe to expose) ───
-  // Create in Stripe Dashboard → Payment Links → New, then paste the URLs here.
-  STRIPE_RESURRECTION: "REPLACE_ME_STRIPE_RESURRECTION_URL",
-  STRIPE_CONFESSION:   "REPLACE_ME_STRIPE_CONFESSION_URL",
-  STRIPE_BUNDLE:       "REPLACE_ME_STRIPE_BUNDLE_URL",
+  // LIVE — created via Stripe MCP on 2026-05-27.
+  // All three have: shipping (US+CA), promo codes enabled, metadata.sku set, redirect to /thank-you.
+  STRIPE_RESURRECTION: "https://buy.stripe.com/28E6oJ8W69BYdsQfW014400",
+  STRIPE_CONFESSION:   "https://buy.stripe.com/eVqdRb0pA01o1K88ty14401",
+  STRIPE_BUNDLE:       "https://buy.stripe.com/7sYeVfa0a8xU74s7pu14402",
 
   // Stripe Publishable Key (PUBLIC — safe to expose). Used ONLY if you add Stripe.js Embedded Checkout later.
   // For Payment Links above, this isn't required.
