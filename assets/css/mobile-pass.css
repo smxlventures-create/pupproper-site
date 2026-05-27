@@ -1,0 +1,297 @@
+/* PUPPROPER — Mobile UX pass (v4 patch)
+ * ─────────────────────────────────────────────────────────────────
+ * Fixes the 3 mobile blockers identified in brand/10-design-direction-v4.md:
+ *   1. Hamburger drawer (replaces hidden-nav at ≤768px)
+ *   2. Bottom tab bar (mobile only, ≤720px)
+ *   3. Sticky add-to-bag on PDPs (mobile only)
+ *   4. 44px touch target enforcement
+ * Loads after main.css; overrides without re-architecting.
+ * ─────────────────────────────────────────────────────────────────
+ */
+
+/* ════════════════════ HAMBURGER + DRAWER ════════════════════ */
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 -10px 0 0;
+}
+.nav-toggle__bar {
+  position: absolute;
+  left: 12px;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  transition: transform .25s ease, top .25s ease, opacity .2s ease;
+  border-radius: 2px;
+}
+.nav-toggle__bar:nth-child(1) { top: 16px; }
+.nav-toggle__bar:nth-child(2) { top: 21px; }
+.nav-toggle__bar:nth-child(3) { top: 26px; }
+
+body.nav-open .nav-toggle__bar:nth-child(1) { top: 21px; transform: rotate(45deg); }
+body.nav-open .nav-toggle__bar:nth-child(2) { opacity: 0; }
+body.nav-open .nav-toggle__bar:nth-child(3) { top: 21px; transform: rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .nav-toggle { display: inline-flex; }
+}
+
+/* The drawer itself */
+.nav-drawer {
+  position: fixed;
+  top: 0; right: 0;
+  width: 100%; max-width: 420px; height: 100vh; height: 100dvh;
+  background: var(--cream, #F2EBDD);
+  z-index: 90;
+  transform: translateX(100%);
+  transition: transform .35s cubic-bezier(0.32, 0.72, 0.18, 1);
+  overflow-y: auto;
+  padding: 88px 28px 96px;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: -24px 0 60px rgba(26, 26, 26, 0.08);
+}
+body.nav-open .nav-drawer { transform: translateX(0); }
+
+.nav-drawer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-drawer__list li { margin: 0; padding: 0; }
+.nav-drawer__list a {
+  display: block;
+  padding: 18px 0;
+  font-family: 'Söhne Breit', 'Outfit', 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: -0.005em;
+  color: var(--ink, #1A1A1A);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  min-height: 56px;
+}
+.nav-drawer__list a:active { opacity: 0.55; }
+
+.nav-drawer__meta {
+  position: absolute;
+  bottom: 32px;
+  left: 28px;
+  right: 28px;
+  font-family: 'Söhne Mono', 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+/* Scrim behind the drawer */
+.nav-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.42);
+  z-index: 85;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+body.nav-open .nav-scrim { opacity: 1; visibility: visible; }
+body.nav-open { overflow: hidden; }
+
+/* Hide drawer/scrim entirely on desktop so they can't show */
+@media (min-width: 769px) {
+  .nav-drawer, .nav-scrim { display: none; }
+}
+
+
+/* ════════════════════ BOTTOM TAB BAR (mobile) ════════════════════ */
+
+.bottom-tabs {
+  display: none;
+}
+@media (max-width: 720px) {
+  .bottom-tabs {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(26, 26, 26, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 70;
+    padding: 8px env(safe-area-inset-right, 0) calc(8px + env(safe-area-inset-bottom, 0)) env(safe-area-inset-left, 0);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.18);
+  }
+  .bottom-tabs__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 56px;
+    color: var(--cream, #F2EBDD);
+    text-decoration: none;
+    font-family: 'Söhne Mono', 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.78;
+    transition: opacity .15s ease;
+    position: relative;
+  }
+  .bottom-tabs__item:active { opacity: 1; }
+  .bottom-tabs__icon { font-size: 18px; line-height: 1; }
+  .bottom-tabs__badge {
+    position: absolute;
+    top: 4px;
+    right: 18px;
+    background: var(--coral, #FF6F61);
+    color: var(--ink, #1A1A1A);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 1px 5px;
+    border-radius: 6px;
+    line-height: 1.3;
+  }
+
+  /* Add bottom padding to body so content isn't hidden under the tab bar */
+  body { padding-bottom: 80px; }
+  body.nav-open .bottom-tabs { transform: translateY(100%); transition: transform .3s ease; }
+}
+
+
+/* ════════════════════ STICKY ADD-TO-BAG (PDP only) ════════════════════ */
+
+.sticky-buy {
+  display: none;
+}
+@media (max-width: 720px) {
+  body[data-pdp] .sticky-buy {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: fixed;
+    bottom: 76px; /* sits above the bottom tab bar */
+    left: 0; right: 0;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0)) 16px;
+    background: var(--cream, #F2EBDD);
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+    z-index: 65;
+    box-shadow: 0 -6px 18px rgba(26, 26, 26, 0.06);
+    transform: translateY(0);
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .sticky-buy__thumb {
+    width: 44px; height: 44px;
+    border-radius: 8px;
+    flex: 0 0 44px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--coral, #FF6F61);
+  }
+  body[data-pdp="confession"] .sticky-buy__thumb { background-color: var(--sage, #6CC24A); }
+  body[data-pdp="bundle"] .sticky-buy__thumb { background-color: var(--cream, #F2EBDD); border: 1px solid rgba(26, 26, 26, 0.12); }
+  .sticky-buy__info {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .sticky-buy__name {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.2;
+    margin: 0 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sticky-buy__price {
+    font-family: 'Söhne Mono', 'JetBrains Mono', monospace;
+    font-size: 12px;
+    opacity: 0.75;
+  }
+  .sticky-buy__cta {
+    background: var(--ink, #1A1A1A);
+    color: var(--cream, #F2EBDD);
+    padding: 14px 18px;
+    min-height: 48px;
+    border-radius: 999px;
+    border: 0;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    flex: 0 0 auto;
+  }
+  .sticky-buy__cta:active { opacity: 0.88; }
+
+  /* Hide when nav drawer is open */
+  body.nav-open .sticky-buy { transform: translateY(140%); }
+}
+
+
+/* ════════════════════ 44PX TOUCH TARGET ENFORCEMENT ════════════════════ */
+
+@media (max-width: 768px) {
+  /* Cart pill in header — was ~32px, bump to 44px */
+  .site-nav__cart {
+    min-height: 44px;
+    padding: 12px 18px !important;
+    font-size: 13px !important;
+  }
+
+  /* SKU card buttons — were 12×22 (~36px), bump to 14×22 */
+  .sku-card .btn {
+    padding: 14px 22px;
+    min-height: 44px;
+  }
+
+  /* Footer links — expand tap target */
+  .site-footer__col ul li a {
+    display: inline-block;
+    padding: 6px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* FAQ summary chevron tap area */
+  .faq-item summary {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Subtle: any .btn--outline pill on mobile */
+  .btn--outline {
+    min-height: 44px;
+  }
+}
+
+
+/* ════════════════════ NICETIES ════════════════════ */
+
+/* Respect reduced-motion for the drawer slide */
+@media (prefers-reduced-motion: reduce) {
+  .nav-drawer, .nav-scrim, .sticky-buy, .bottom-tabs {
+    transition: none !important;
+  }
+}
+
+/* Improve focus rings for keyboard users */
+.nav-toggle:focus-visible,
+.nav-drawer__list a:focus-visible,
+.bottom-tabs__item:focus-visible,
+.sticky-buy__cta:focus-visible {
+  outline: 2px solid var(--coral, #FF6F61);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
